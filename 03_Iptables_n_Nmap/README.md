@@ -28,6 +28,23 @@ You issue a SYN, if the server does not reply, or replies with ICMP error : it m
 iptables -P INPUT DROP
 ```
 
+
+```sh
+# Set firewall to pass through
+iptables -P INPUT ACCEPT
+
+iptables -t filter -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source    
+```
+
 ```
 nmap -p 80 172.17.0.3      
 Starting Nmap 7.70 ( https://nmap.org ) at 2020-04-03 15:07 UTC
