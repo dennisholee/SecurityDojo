@@ -98,3 +98,20 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX packets 2040  bytes 116027 (113.3 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
+
+```
+iptables -P INPUT DROP
+```
+
+```
+17:02:28.368287 ARP, Request who-has 172.17.0.3 tell 172.17.0.2, length 28
+17:02:28.368374 ARP, Reply 172.17.0.3 is-at 02:42:ac:11:00:03, length 28
+17:02:28.618220 IP 172.17.0.2.60481 > 192.168.65.1.53: 3505+ PTR? 3.0.17.172.in-addr.arpa. (41)
+17:02:28.623168 IP 192.168.65.1.53 > 172.17.0.2.60481: 3505 NXDomain 0/0/0 (41)
+17:02:28.716871 IP 172.17.0.2.51920 > 172.17.0.3.80: Flags [S], seq 1396932402, win 1024, options [mss 1460], length 0
+17:02:28.817903 IP 172.17.0.2.51921 > 172.17.0.3.80: Flags [S], seq 1396866867, win 1024, options [mss 1460], length 0
+17:02:33.594633 ARP, Request who-has 172.17.0.2 tell 172.17.0.1, length 28
+17:02:33.594633 ARP, Request who-has 172.17.0.1 tell 172.17.0.2, length 28
+17:02:33.594685 ARP, Reply 172.17.0.2 is-at 02:42:ac:11:00:02, length 28
+17:02:33.594929 ARP, Reply 172.17.0.1 is-at 02:42:c7:17:26:a2, length 28
+```
